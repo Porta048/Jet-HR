@@ -1,0 +1,161 @@
+.calculator-card {
+    background: var(--bg-card);
+    border-radius: 1rem;
+    box-shadow: var(--shadow-lg);
+    padding: 2rem;
+    width: 100%;
+    max-width: 600px;
+    text-align: left;
+    transition: transform 0.2s ease;
+}
+
+.input-section {
+    margin-bottom: 2rem;
+}
+
+.input-section label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    color: var(--text-color);
+}
+
+.input-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.input-wrapper input {
+    width: 100%;
+    padding: 1rem;
+    padding-right: 2.5rem;
+    font-size: 1.25rem;
+    border: 2px solid var(--border-color);
+    border-radius: 0.5rem;
+    transition: border-color 0.2s;
+    outline: none;
+}
+
+.input-wrapper input:focus {
+    border-color: var(--primary-color);
+}
+
+.currency-symbol {
+    position: absolute;
+    right: 1rem;
+    font-size: 1.25rem;
+    color: var(--text-secondary);
+    pointer-events: none;
+}
+
+.results-section {
+    animation: fadeIn 0.5s ease-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.summary-cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.summary-card {
+    background: #f3f4f6;
+    padding: 1.5rem;
+    border-radius: 0.75rem;
+    text-align: center;
+}
+
+.summary-card.highlight {
+    background: var(--primary-color);
+    color: white;
+}
+
+.summary-card.highlight .amount {
+    color: white;
+}
+
+.summary-card.highlight .subtitle {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.summary-card h3 {
+    font-size: 0.875rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.5rem;
+    opacity: 0.8;
+}
+
+.amount {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: var(--text-color);
+}
+
+.subtitle {
+    font-size: 0.75rem;
+    display: block;
+    margin-top: 0.25rem;
+    color: var(--text-secondary);
+}
+
+.breakdown-section h3 {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+    color: var(--text-color);
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 0.5rem;
+}
+
+.breakdown-table {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.breakdown-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+}
+
+.breakdown-row span:last-child {
+    font-family: 'Monaco', 'Consolas', monospace;
+    font-weight: 500;
+}
+
+.breakdown-row .negative {
+    color: var(--danger-color);
+}
+
+.breakdown-row .positive {
+    color: var(--success-color);
+}
+
+.breakdown-row .info {
+    color: var(--text-color);
+}
+
+.total-row {
+    margin-top: 0.5rem;
+    padding-top: 0.75rem;
+    border-top: 2px dashed var(--border-color);
+    font-weight: 600;
+    color: var(--text-color);
+}
